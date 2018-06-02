@@ -12,4 +12,5 @@
     <string name="text_time">Time</string>
     <string name="text_btn_add">Add</string>
     <string name="text_btn_add_station">Add station</string>
+    <string name="text_time_item">Time:</string>
 </resources>
