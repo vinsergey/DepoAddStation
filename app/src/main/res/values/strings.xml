@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DepoAddRoutes</string>
+    <string name="text_id">ID:</string>
+    <string name="text_type">type:</string>
+    <string name="text_direction">Direction:</string>
+    <string name="text_id_station">ID station:</string>
+    <string name="text_day_of_week">Day of week:</string>
+    <string name="text_station_name">Station name:</string>
+    <string name="text_workday">Workday</string>
+    <string name="text_holiday">Holiday</string>
+    <string name="text_name_route">Name route:</string>
+    <string name="text_time">Time</string>
+    <string name="text_btn_add">Add</string>
+    <string name="text_btn_add_station">Add station</string>
+</resources>

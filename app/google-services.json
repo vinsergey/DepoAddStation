@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "956278384499",
+    "firebase_url": "https://depo-45a14.firebaseio.com",
+    "project_id": "depo-45a14",
+    "storage_bucket": "depo-45a14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956278384499:android:f11a62ec959cae3a",
+        "android_client_info": {
+          "package_name": "com.example.vinsergey.depo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956278384499-alqu2goaeqnbqpr6532g6e8cdcko79ut.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vinsergey.depo",
+            "certificate_hash": "abf6c6fd14971e39a384df49a2f10b910413f580"
+          }
+        },
+        {
+          "client_id": "956278384499-j9f2t7p312on11d9fkk88f6m792i98bj.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "956278384499-j9f2t7p312on11d9fkk88f6m792i98bj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaSqKYZwL6Q1wijiurgmSQJ-Y1rcoDKd4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956278384499-j9f2t7p312on11d9fkk88f6m792i98bj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956278384499:android:502eb381f60c70f5",
+        "android_client_info": {
+          "package_name": "com.example.vinsergey.depoaddroutes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956278384499-2sf82dd44ldilrhgntmpd0s7imhvjscn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vinsergey.depoaddroutes",
+            "certificate_hash": "abf6c6fd14971e39a384df49a2f10b910413f580"
+          }
+        },
+        {
+          "client_id": "956278384499-j9f2t7p312on11d9fkk88f6m792i98bj.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "956278384499-j9f2t7p312on11d9fkk88f6m792i98bj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaSqKYZwL6Q1wijiurgmSQJ-Y1rcoDKd4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956278384499-j9f2t7p312on11d9fkk88f6m792i98bj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
