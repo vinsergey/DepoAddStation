@@ -16,14 +16,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityMainBinding binding;
     private String[] typeTransport = {"tram", "trolley", "bus"};
     private String[] directionTransport = {"forward", "backward"};
-    private String[] dayOfWeek = {"workday", "holiday"};
     private String currentType, currentDirection;
-    private static final String MY_LOG = "MyLog";
+    private static final String WORK = "work";
+    private static final String HOLI = "holi";
+    //private static final String MY_LOG = "MyLog";
     private RecyclerViewAdapter adapterWorkday, adapterHoliday;
     private List<String> stationsWorkday, stationsHoliday;
     private DatabaseReference database;
@@ -38,7 +39,13 @@ public class MainActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference().child("routes");
 
         stationsWorkday = new ArrayList<>();
+//        stationsWorkday.add("6:00");
+//        stationsWorkday.add("6:12");
+//        stationsWorkday.add("6:18");
         stationsHoliday = new ArrayList<>();
+//        stationsHoliday.add("6:30");
+//        stationsHoliday.add("6:40");
+//        stationsHoliday.add("6:50");
 
         binding.type.setAdapter(typeAdapter);
         binding.type.setSelection(0);
@@ -71,11 +78,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.recyclerViewWorkday.setLayoutManager(new LinearLayoutManager(this));
-        adapterWorkday = new RecyclerViewAdapter();
+        adapterWorkday = new RecyclerViewAdapter(this, WORK);
         binding.recyclerViewWorkday.setAdapter(adapterWorkday);
 
         binding.recyclerViewHoliday.setLayoutManager(new LinearLayoutManager(this));
-        adapterHoliday = new RecyclerViewAdapter();
+        adapterHoliday = new RecyclerViewAdapter(this, HOLI);
         binding.recyclerViewHoliday.setAdapter(adapterHoliday);
 
         binding.btnAddTimeWorkday.setOnClickListener(new View.OnClickListener() {
@@ -102,28 +109,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 writeRoute();
-                //writeTest();
             }
         });
     }
 
     private void writeRoute() {
-        String id = binding.idRoute.getText().toString();
         Route route = new Route();
-        route.name_route = binding.nameRoute.getText().toString();
-        route.type = currentType;
-        route.direction.name_station = binding.nameStation.getText().toString();
-        route.direction.workday = stationsWorkday;
-        route.direction.holiday = stationsHoliday;
+        String nameRoute = binding.nameRoute.getText().toString();
+        String id_station = binding.idStation.getText().toString();
+        route.nameStation = binding.nameStation.getText().toString();
+        route.workday = stationsWorkday;
+        route.holiday = stationsHoliday;
 
-        database.child(id).child(currentDirection).setValue(route);
+        database.child(currentType).child(nameRoute).child(currentDirection).child(id_station).setValue(route);
     }
 
-    private void writeTest() {
-        List<String> list = new ArrayList<>();
-        list.add("Sergey");
-        list.add("Olya");
-        list.add("Vasya");
-        database.setValue(list);
+    @Override
+    public void onClick(View v) {
+        RecyclerViewAdapter.Test test = (RecyclerViewAdapter.Test) v.getTag();
+//        Integer test = (Integer) v.getTag(14);
+//        String test2 = (String) v.getTag(13);
+//        Log.d(MY_LOG, String.valueOf(test));
+        //Log.d(MY_LOG, String.valueOf(test.position + " " + test.name));
+
+        if (test.name.equals(WORK)) {
+            stationsWorkday.remove(test.position);
+            adapterWorkday.setData(stationsWorkday);
+        }
+        if (test.name.equals(HOLI)) {
+            stationsHoliday.remove(test.position);
+            adapterHoliday.setData(stationsHoliday);
+        }
     }
 }

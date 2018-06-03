@@ -8,7 +8,7 @@
     <string name="text_station_name">Station name:</string>
     <string name="text_workday">Workday</string>
     <string name="text_holiday">Holiday</string>
-    <string name="text_name_route">Name route:</string>
+    <string name="text_name_route">Route №</string>
     <string name="text_time">Time</string>
     <string name="text_btn_add">Add</string>
     <string name="text_btn_add_station">Add station</string>

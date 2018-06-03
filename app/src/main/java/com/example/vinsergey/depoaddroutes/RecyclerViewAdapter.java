@@ -6,12 +6,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import java.util.Collections;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<String> data = Collections.emptyList();
+    private View.OnClickListener listener;
+    private String name;
+
+    RecyclerViewAdapter(View.OnClickListener listener, String name) {
+        this.listener = listener;
+        this.name = name;
+    }
 
     public void setData(List<String> data) {
         this.data = data;
@@ -27,7 +35,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        Test test = new Test();
+        test.name = name;
+        test.position = position;
+
+        //      holder.itemView.setTag(13, name);
         holder.time.setText(data.get(position));
+        holder.itemView.setOnClickListener(listener);
+// /       holder.itemView.setTag(14, position);'
+        holder.itemView.setTag(test);
     }
 
     @Override
@@ -37,9 +54,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView time;
+
         ViewHolder(View itemView) {
             super(itemView);
             time = itemView.findViewById(R.id.time_item);
         }
+    }
+
+    class Test {
+        int position;
+        String name;
     }
 }

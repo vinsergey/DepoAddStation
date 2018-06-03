@@ -1,8 +1,9 @@
 package com.example.vinsergey.depoaddroutes;
 
+import java.util.List;
+
 public class Route {
-    public String id;
-    public String name_route;
-    public String type;
-    public Direction direction = new Direction();
+    public String nameStation;
+    public List<String> workday;
+    public List<String> holiday;
 }
