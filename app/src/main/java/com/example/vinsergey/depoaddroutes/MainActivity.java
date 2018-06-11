@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 stationsWorkday.add(station);
                 //Log.d(MY_LOG, String.valueOf(dataWorkday.size()));
                 adapterWorkday.setData(stationsWorkday);
+                binding.recyclerViewWorkday.smoothScrollToPosition(adapterWorkday.getItemCount() - 1);
             }
         });
 
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 stationsHoliday.add(station);
                 //Log.d(MY_LOG, String.valueOf(dataWorkday.size()));
                 adapterHoliday.setData(stationsHoliday);
+                binding.recyclerViewHoliday.smoothScrollToPosition(adapterHoliday.getItemCount() - 1);
             }
         });
 
